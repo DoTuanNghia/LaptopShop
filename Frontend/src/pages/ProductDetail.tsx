@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getProductById } from '../services/product.service';
 import { addToCart } from '../services/cart.service';
 import { getCurrentUser } from '../services/auth.service';
-import { Product } from '../types';
+import type { Product } from '../types';
 
 const ProductDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -64,7 +64,7 @@ const ProductDetail: React.FC = () => {
                     <div className="product-price" style={{ fontSize: '2rem', marginBottom: '20px' }}>
                         ${product.price.toLocaleString()}
                     </div>
-                    
+
                     <div className="card" style={{ marginBottom: '30px' }}>
                         <h3 style={{ marginBottom: '15px' }}>Specifications</h3>
                         <ul style={{ display: 'grid', gap: '10px' }}>
@@ -86,9 +86,9 @@ const ProductDetail: React.FC = () => {
                             <span style={{ fontSize: '1.2rem', fontWeight: 'bold', width: '30px', textAlign: 'center' }}>{quantity}</span>
                             <button className="quantity-btn" onClick={() => setQuantity(quantity + 1)}>+</button>
                         </div>
-                        <button 
-                            className="btn btn-primary" 
-                            style={{ flexGrow: 1, padding: '15px' }} 
+                        <button
+                            className="btn btn-primary"
+                            style={{ flexGrow: 1, padding: '15px' }}
                             onClick={handleAddToCart}
                             disabled={addingToCart}
                         >

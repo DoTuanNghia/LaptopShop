@@ -1,5 +1,5 @@
 import api from './api';
-import { Order } from '../types';
+import type { Order } from '../types';
 
 export const placeOrder = async () => {
     const response = await api.post<Order>('/orders');

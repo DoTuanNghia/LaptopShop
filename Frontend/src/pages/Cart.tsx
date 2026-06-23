@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getCartItems, updateCartItem, removeCartItem } from '../services/cart.service';
 import { placeOrder } from '../services/order.service';
-import { CartItem } from '../types';
+import type { CartItem } from '../types';
 
 const Cart: React.FC = () => {
     const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -79,9 +79,9 @@ const Cart: React.FC = () => {
                     <div className="card" style={{ padding: '0' }}>
                         {cartItems.map(item => (
                             <div key={item.id} className="cart-item">
-                                <img 
-                                    src={item.product.imageUrl || 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=200'} 
-                                    alt={item.product.name} 
+                                <img
+                                    src={item.product.imageUrl || 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=200'}
+                                    alt={item.product.name}
                                     className="cart-item-img"
                                 />
                                 <div className="cart-item-info">
@@ -117,8 +117,8 @@ const Cart: React.FC = () => {
                                 <span>Total:</span>
                                 <span>${total.toLocaleString()}</span>
                             </div>
-                            <button 
-                                className="btn btn-primary" 
+                            <button
+                                className="btn btn-primary"
                                 style={{ width: '100%', marginTop: '20px', padding: '15px' }}
                                 onClick={handleCheckout}
                                 disabled={checkingOut}

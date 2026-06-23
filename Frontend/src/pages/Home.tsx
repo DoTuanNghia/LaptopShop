@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts, searchProducts, filterProducts } from '../services/product.service';
 import ProductCard from '../components/ProductCard';
-import { Product } from '../types';
+import type { Product } from '../types';
 
 const Home: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -64,10 +64,10 @@ const Home: React.FC = () => {
 
             <div className="filters-bar">
                 <form onSubmit={handleSearch} style={{ display: 'flex', gap: '10px' }}>
-                    <input 
-                        type="text" 
-                        className="form-control filter-select" 
-                        placeholder="Search keywords..." 
+                    <input
+                        type="text"
+                        className="form-control filter-select"
+                        placeholder="Search keywords..."
                         value={keyword}
                         onChange={(e) => setKeyword(e.target.value)}
                     />

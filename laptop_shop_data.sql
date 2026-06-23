@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS ecommerce;
+USE ecommerce;
+
 -- Drop tables if they exist
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS order_items;

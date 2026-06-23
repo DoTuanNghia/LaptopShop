@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getUserOrders } from '../services/order.service';
-import { Order } from '../types';
+import type { Order } from '../types';
 
 const Orders: React.FC = () => {
     const [orders, setOrders] = useState<Order[]>([]);
@@ -46,7 +46,7 @@ const Orders: React.FC = () => {
                                     ${order.totalPrice.toLocaleString()}
                                 </div>
                             </div>
-                            
+
                             <div>
                                 {order.orderItems?.map(item => (
                                     <div key={item.id} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>

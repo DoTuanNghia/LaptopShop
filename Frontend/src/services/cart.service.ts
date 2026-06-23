@@ -1,5 +1,5 @@
 import api from './api';
-import { CartItem } from '../types';
+import type { CartItem } from '../types';
 
 export const getCartItems = async () => {
     const response = await api.get<CartItem[]>('/cart');

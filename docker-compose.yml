@@ -26,8 +26,15 @@ services:
     container_name: mysql
     ports:
       - "3306:3306"
+    volumes:
+      - ./laptop_shop_data.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: laptop_shop
+
+volumes:
+  mysql_data:
 
   

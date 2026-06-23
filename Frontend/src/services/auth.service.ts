@@ -1,6 +1,6 @@
 import api from './api';
 
-export const login = async (username, password) => {
+export const login = async (username: string, password: string) => {
     const response = await api.post('/auth/login', { username, password });
     if (response.data.token) {
         localStorage.setItem('token', response.data.token);
@@ -9,7 +9,7 @@ export const login = async (username, password) => {
     return response.data;
 };
 
-export const register = async (username, email, password) => {
+export const register = async (username: string, email: string, password: string) => {
     const response = await api.post('/auth/register', { username, email, password });
     return response.data;
 };

@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     const [keyword, setKeyword] = useState('');
     const [brand, setBrand] = useState('');
     const [ram, setRam] = useState('');
-    const [cpu, setCpu] = useState('');
+    const [cpu] = useState('');
     const [loading, setLoading] = useState(true);
 
     const loadProducts = async () => {

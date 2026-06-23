@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS ecommerce;
-USE ecommerce;
+CREATE DATABASE IF NOT EXISTS laptop_shop;
+USE laptop_shop;
 
 -- Drop tables if they exist
 SET FOREIGN_KEY_CHECKS = 0;

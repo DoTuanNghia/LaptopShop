@@ -8,7 +8,7 @@ COPY . .
 RUN mvn install -DskipTests
 
 ## Run Stage
-FROM alpine/java:21-jdk
+FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /run
 
